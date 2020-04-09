@@ -1,8 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0"?>
 <resources>
+    <string name="app_name">Walkthrough</string>
+    <string name="action_settings">Settings</string>
+    <string name="page_one">When you are done talking with the lookout, Part I will begin. Go into the Scumm Bar and talk to the pirate by the window, Mancomb Seepgood. Talk to him and say you want to be a pirate. Then ask where you can find the governor. He will tell you a story and suggest you ask Estevan to tell you the rest of the story. Go and talk to the pirate directly under the chandelier, Estevan. Ask him about the LeChuck guy. You can also talk to the pirate sitting beside the dog, but he’s not important. You can also talk to the dog for fun. </string>
 
-   <string name="app_name">Walkthrough</string>
-   <string name="hello_world">Hello world!</string>
-   <string name="action_settings">Settings</string>
+    <string name="page_two">Go to the right past the curtain and you will find the important-looking pirates. Talk to them and tell them you want to be a pirate. They will explain that you have to go through “The three trials” to become a pirate. They are mastering the sword, mastering the art of thievery, and the quest, which is finding the lost treasure of Melee Island. They request you return with proof that each time you have accomplished one of the trials. You can now ask them to tell you more about each of the trials or you can end the conversation. Try and open the door to the right. The cook will tell you to get lost. Wait until he leaves the kitchen and has walked out of the screen. Then enter the kitchen. Pick up the hunk of meat on the table and the pot from under the table. Use the hunk of meat with the pot o´ stew in the corner. Then pick it up again. It’s now stewed meat.</string>
 
+    <string name="page_three">Open the door to the small bridge. A seagull will land and start eating the fish. Go out to the end of the bridge, the plank will flap and scare the seagull away. Do this a few times and quickly pick up the fish. Wall back out of the kitchen and return to the street. When you leave the Scumm Bar and cutscene follows with Bob telling LeChuck that there is a problem on Melee Island with a new wannabe pirate. After the cutscene, walk to the left, back up to the lookout and past him to the right. Now you see a map of Melee Island with lights. They represent places you can go. Go to the one in the middle called “clearing”. You’ll see that it is a circus. Walk inside. You will see the two Fettucini brothers arguing. Wait until they are done, then say something to get their attention. They will immediately try to convince you to test the cannon for them. Agree to the deal, you will discover that they will pay you 478 pieces of eight. They will ask you if you have a helmet, say of course and show them the pot.</string>
+
+    <string name="next_button">Next</string>
+    <string name="back_button">Back</string>
+    <string name="label_page_1">Page 1</string>
+    <string name="label_page_2">Page 2</string>
+    <string name="label_page_3">Page 3</string>
 </resources>
