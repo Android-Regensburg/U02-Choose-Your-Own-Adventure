@@ -1,61 +1,119 @@
-# 02 | Walkthrough
+---
+title: Einführung in die Entwicklungsumgebung Android Studio
+author: Zuletzt bearbeitet von Alexander Bazo
+documentclass: scrartcl
+classoption:
+  - a4paper
+header-includes: |
+    \usepackage{german} 
+    \usepackage[a4paper,left=2.5cm, right=2.5cm,top=2.5cm, bottom=3cm]{geometry}
+    \usepackage{fancyhdr}
+    \pagestyle{fancy}
+    \fancyhf{}
+    \rhead{Mobile Apps für Android}
+    \lhead{Übungsaufgaben}
+    \cfoot{\includegraphics[height=2cm]{docs/footer.png}}
+    \fancypagestyle{plain}{
+      \fancyhf{}
+      \rhead{Mobile Apps für Android}
+      \lhead{Übungsaufgaben}
+      \cfoot[C]{\includegraphics[height=2cm]{docs/footer.png}}}
+---
 
-![Cover für die zweite Übungsaufgabe](./docs/cover.png)
+# 02 | Choose Your Own Adventure: Der Live-Stream
 
-## Downloads
+![](./docs/cover.png)
 
-- [Download des Starterpakets](https://github.com/Android-Regensburg/U02-Walkthrough/archive/master.zip)
-- [Download des Lösungsvorschlag](https://github.com/Android-Regensburg/U02-Walkthrough/archive/solution.zip)
+In dieser Aufgabe machen Sie sich mit den wichtigsten Konzepten von *Activities* und *Intents* vertraut. Sie planen und implementieren ein einfaches Layout für das *User Interface* Ihrer Anwendung, entwickeln mehrere *Activities* die dieses Layout verwenden und Nutzen *Events* und *Intents* um NutzerInnen den Wechsel zwischen diesen *Activities* zu erlauben. Screenshots zu einer möglichen Lösung finden Sie am Ende dieser Anleitung. **Vergessen Sie nicht, den Code möglichst häufig und regelmäßig auf Ihrem Smartphone oder einem *Virtual Device* zu testen um so möglichst früh Fehler zu finden und beheben zu können.**
 
-## Aufgabe
+## Aufgabenstellung
 
-Erstellen Sie eine einfache App, um das Konzept der Activities und Intents zu üben und den Zusammenhang zwischen Activities und Layouts zu vertiefen.
-Ihre App soll aus drei Acitvities bestehen, die jeweils einen Teil des *Monkey Island*-Walkthroughs (Texte am Schluss des Dokuments) anzeigen. Mit den Buttons Vor und Zurück soll zwischen den Teilen gewechselt werden können.
+Implementieren Sie ein interaktive Geschichte, die an das Konzept der [Gamebooks](https://en.wikipedia.org/wiki/Gamebook) angelehnt ist. Aufgeteilt auf mehrere *Seiten*, werden den SpielerInnen Abschnitte einer zusammenhängenden Geschichte präsentiert. In jedem Abschnitt können die SpielerInnen aus zwei möglichen Optionen für die Fortsetzung der Geschichte wählen und damit die Handlung beeinflussen. In diesem Beispiel erzählen wir die Geschichte des Live-Streams zu diesem Kurs und die Konsequenzen, die das Zuschauen haben kann ;)
 
-## Hinweise
+### Spielablauf
 
-* Um die Gestaltung des Layouts einfacher zu machen, nutzen sie ein `LinearLayout`.
-* Beachten Sie, dass für das `LinearLayout` zusätzliche Attribute vergeben werden müssen. Beispielsweise das Attribut `orientation`, mit dem die Richtung angepasst werden kann, in der die UI-Elemente angeordnet werden.
-* Geben sie den UI-Elementen in ihrem Layout eine ID, damit  Sie sie in den Activities referenzieren können.
+Der Spielablauf kann anhand dieser Grafik nachvollzogen werden. Die entsprechenden Texte finden Sie am Ende dieser Aufgabenbeschreibung. 
+
+![Szenen-Graph der Geschichte](./docs/scene-graph.png "Mögliche Wege durch die Geschichte")
+
+**Jede *Szene* besteht aus einem Text und zwei möglichen Optionen für das weitere Vorgehen. Jede Szene wird durch eine *Activity* repräsentiert. Alle *Activities* nutzen das gleiche Layout, in dem `TextView`-Elemente für das Anzeigen von Überschrift und aktuellem *Kapitel* und  `Button`-Elemente für die Auswahl der beiden möglichen Optionen verwendet werden.**  
 
 ## Vorgehen
-1. Erstellen sie ein neues Android Studio Projekt mit einer `Empty Acitivity`.
-2. Tragen Sie in der `strings.xml` drei neue Strings ein für die Texte, die später in den Activities angezeigt werden sollen. Geben Sie den Strings geeignete Namen. Im Anhang dieses Dokuments finden Sie die Texte für Ihre App.
-3. Fügen Sie nun noch zwei weitere Strings ein, die dazu dienen werden, die Buttons zu beschriften.
-4. Verändern Sie das vorgegebene Layout in der `activity_main.xml`. Überlegen Sie sich, welche UI-Elemente Sie benötigen und fügen Sie diese dem Layout hinzu. Wie die Elemente angeordnet werden sollen, entnehmen Sie den Screenshots im Anhang (Abbildung 1).
-5. Wechseln Sie nun in die Activity, um sie wie folgt anzupassen:
-   1. Erstellen Sie Variablen für die verwendeten Layout-Elemente. Diese sollen dem kleinstmöglichen Sichtbarkeitsbereich unterliegen.
-   2. Greifen Sie in der `onCreate()`-Methode auf das UI-Element `TextView` zu. 
-   3. Holen Sie sich nun den Text für das `TextView` aus der `strings.xml` und fügen Sie ihn dem `TextView` hinzu.
-   4. Probieren Sie, von Zeit zu Zeit, ihre App laufen zu lassen. So können Sie leicht überprüfen, ob alles so funktioniert, wie Sie es möchten.
-   5. Den Text für die Buttons, können Sie nach dem zuvor erklärten Prinzip ebenfalls zuweisen.
-   6. Da Sie momentan die erste Activity erstellen, sollte der *Zurück* Button noch deaktiviert (ausgegraut) sein. Dazu können Sie die Methode `setEnabled(boolean)` des Buttonobjekts verwenden.
-   7. Die Buttons werden jetzt zwar angezeigt, haben jedoch keine Funktion. Um ihnen eine Funktion zu geben, verwenden Sie die Methode `setOnClickListener()`,  dem Sie ein `OnClickListener`-Objekt als Parameter übergeben. Dieses `OnClickListener`-Objekt erzeugen Sie direkt an der Stelle des Parameters. Bei der Erzeugung eines Objekts der Klasse `OnClickListener`, muss die abstrakte Methode `onClick(View v)`  überschrieben werden. Um eine Activity zu beenden, rufen sie die Methode `finish()` der Activity auf und sie wird geschlossen.
-6. Die anderen beiden Activities legen Sie durch Kopieren der Ersten an. Tragen sie diese auch in der `AndroidManifest.xml` ein. Denken Sie daran, die Texte anzupassen und die Buttons zu de-/aktivieren, sowie ggf. einen weiteren `OnClickListener` zu setzen.
-7. In den jeweiligen `onClick()`-Methoden sollen Intents dazu benutzt werden, um die nächste Activity zu starten, bzw. die aktuelle zu beenden.
 
-**Optional** Überlegen Sie sich, wie Sie die Code-Usability erhöhen können, indem sie geeignete Methoden erstellen.
+### Ein neues Projekt
 
-**Optional** Um Ihre App ein wenig ansprechender zu gestalten, können Sie auch noch einen Titel für jede Seite über den Text setzen (Sie benötigen hierfür ein weiteres `TextView`). Wie das aussehen könnte sehen Sie in den Screenshots im Anhang.
+Erstellen Sie in *Android Studio* ein neues Projekt. Wählen Sie als *Project Template* die Option *Empty Activity* und vergeben Sie sinnvolle Werte für den Namen und Paketnamen der Anwendung. 
 
-Probieren Sie zudem ein wenig mit den XML-Attributen herum, die sie im Layout etwa dem `TextView` vergeben können, um es etwas schöner darzustellen, wie es in den angehängten Screenshots (Abbildung 2) zu sehen ist.
+### Ressourcen
 
-## Walkthrough-Texte
-### Seite 1  
-When you are done talking with the lookout, Part I will begin. Go into the Scumm Bar and talk to the pirate by the window, Mancomb  Seepgood. Talk to him and say you want to be a pirate. Then ask where you can find the governor. He will tell you a story and suggest you ask Estevan to tell you the rest of the story. Go and talk to the pirate directly under the chandelier, Estevan. Ask him about the LeChuck guy. You can also talk to the pirate sitting beside the dog, but he’s not important. You can also talk to the dog for fun.
+Für die Anwendung benötigen wir eine Reihe von Texten (*Strings*), die wir an verschiedenen Stellen des *User Interface* verwenden werden. Dazu gehören die einzelnen *Kapitel*, die Beschriftungen für die Buttons zur Auswahl der möglichen Optionen und eine Überschrift, die in jeder *Activity* über dem aktuellen Text angezeigt wird. Grundsätzlich ist es eine gute Idee, Code und Inhalt (hier die Texte) in einer Anwendung bestmöglich zu trennen. In Android nutzen wir dazu Ressourcendateien, in denen wir in diesem Fall Textbausteine speichern um diese im Anschluss im Code unserer Anwendung referenzieren zu können. Inhaltliche Änderungen müssen dann nur noch in dieser XML-Datei vorgenommen werden - die Referenz im Code bleiben unberührt.
 
-### Seite 2
-Go to the right past the curtain and you will find the important-looking pirates. Talk to them and tell them you want to be a pirate. They will explain that you have to go through “The three trials” to become a pirate. They are mastering the sword, mastering the art of thievery, and the quest, which is finding the lost treasure of Melee Island. They request you return with proof that each time you have accomplished one of the trials. You can now ask them to tell you more about each of the trials or you can end the conversation. Try and open the door to the right. The cook will tell you to get lost. Wait until he leaves the kitchen and has walked out of the screen. Then enter the kitchen. Pick up the hunk of meat on the table and the pot from under the table. Use the hunk of meat with the pot o´ stew in the corner. Then pick it up again. It’s now stewed meat
+**Erstellen Sie in der Datei `res\values\strings.xml` Einträge für alle Texte. Verwenden Sie geeignete Bezeichner (Attribut `name`) mit denen die Texte später im Code referenziert werden können. Als Vorlage können Sie das XML-Element mit dem Namen `app_name` verwenden, das automatisch in der Datei angelegt wird.**
 
-### Seite 3
-Open the door to the small bridge. A seagull will land and start eating the fish. Go out to the end of the bridge, the plank will flap and scare the seagull away. Do this a few times and quickly pick up the fish. Wall back out of the kitchen and return to the street. When you leave the Scumm Bar and cutscene follows with Bob telling LeChuck that there is a problem on Melee Island with a new wannabe pirate. After the cutscene, walk to the left, back up to the lookout and past him to the right. Now you see a map of Melee Island with lights. They represent places you can go. Go to the one in the middle called “clearing”. You’ll see that it is a circus. Walk inside. You will see the two Fettucini brothers arguing. Wait until they are done, then say something to get their attention. They will immediately try to convince you to test the cannon for them. Agree to the deal, you will discover that they will pay you 478 pieces of eight. They will ask you if you have a helmet, say of course and show them the pot.
+### Layout
 
-## Quellen
-Große Teile dieser Anleitung wurden aus der Übungsaufgabe 2 des Sommersemesters 2013 von Thomas Wagner (Universität Regensburg) übernommen.  
-Der Walkthrough-Text kommt von: http://www.worldofmi.com/gamehelp/walk/monkey1.php
+In Ihrem Projekt finden Sie bereits eine automatisch erstellte Layout-Datei, die auch bereits in der ersten *Activity* (Methode `setContentView` in der `MainActivity`) verwendet wird. Sie können dieses Layout über die XML-Ansicht oder den graphischen Editor anpassen und die UI-Elemente ergänzen, die Sie zum Umsetzen der Anwendung benötigen: Ein `TextView` für die Überschrift, ein weiteres `TextView` für den Kapiteltext und die beiden `Buttons` zur Auswahl der möglichen Optionen.
 
-## Anhang
-### Screenshots
-![Screenshots der Walkthrough-App](./docs/screenshot-1.png "So sollte Ihre App in Etwa aussehen")  
-![Screenshots der Walkthrough-App mit optionaler Erweiterung](./docs/screenshot-2.png "So könnte ihre App optional erweitert werden")
+**Editieren Sie die Layout-Datei `res\layout\activity_main.xml`. Fügen Sie die notwendigen UI-Elemente hinzu und vergeben Sie passende *IDs*, mit denen die Elemente später im Code referenziert und manipuliert werden können.**
 
+### Die erste  Activity
+
+Jede mögliche Szene des Spiels wird durch eine *Activity* repräsentiert. Diese sind dabei sehr ähnlich aufgebaut. Alle *Activities* nutzen das gleiche Layout (`activity_main.xml`) und haben die gleiche Aufgabe:
+
+- Anzeigen des aktuellen Texts
+- Anbieten zweier Buttons zur Auswahl der möglichen Verläufe
+- Abfangen der Klicks auf diesen Buttons und Wechsel zur damit ausgewählten, nächsten *Activity*
+
+Wir implementieren die vier Szenen des Spiels (`Start`, `Stream`, `Happy Ending` und `Bad Ending`) als individuelle *Activities* um deren Aufbau und den Wechsel zwischen den *Activities* möglichst häufig zu trainieren. Wahrscheinlich wird Ihnen bei der Umsetzung der Aufgabe aber auffallen, dass es für den konkreten Anwendungsfall auch andere, bessere Alternativen zu diesem Vorgehen geben könnte.
+
+**Passen Sie die vorhandenen *Activity* an, um hier die erste Szene des Spiels darzustellen. Referenzieren Sie die verschiedenen Elemente des *User Interface* in entsprechenden Variablen. Setzten Sie den korrekten Text aus der Ressourcen-Datei ein. Fangen Sie die Klicks auf die Buttons ab, in dem Sie auf diesen `OnClickListener` registrieren. Nutzen Sie später die *Callback*-Methoden der *Listener*, um über *Intents* zur jeweils ausgewählten, nächsten Szene zu wechseln.**
+
+### Die anderen Activities
+
+Verwenden Sie angepasste *Actvitity* als Vorlage für die anderen Szenen, die Sie ebenfalls als einzelne *Activity* abbilden. Neue *Activities*  erstellen Sie, in dem Sie zusätzliche Java-Klassen erzeugen, die von der Superklasse `Activity` erben. Denken Sie daran, diese neuen *Activities* im *Manifest* der Anwendung einzutragen. Vergessen Sie dies, wird Ihre Anwendung abstürzen, sobald Sie versuchen zu diesen *Activities* zu wechseln.
+
+**Wenn alle Szenen erstellt wurden, können Sie die *Callback*-Methoden der *Listener*, die Sie auf den Buttons registriert haben, verwenden, um über *Intents* zur jeweils passenden nächsten *Activity* zu wechseln. Wählen die SpielerInnen in der ersten Szene z.B. die *Option A* aus, wechseln Sie per *Intent* zur Szene `Stream`.**
+
+## Erweiterungen
+
+Sobald die grundlegende Funktionalität der Anwendung implementiert ist, können Sie sich an die Verbesserung und Erweiterung machen. Hier finden Sie dazu ein paar Vorschläge:
+
+- Optimieren Sie Ihren Code (*Refactoring*). Überlegen Sie sich, ob Sie die gemeinsame Funktionalität der erstellten *Activities* in eine gemeinsame Superklasse verschieben können, von der die vier *Activities* erben.
+- Optimieren Sie das *User Interface* der Anwendung, in dem Sie Textgrößen und Abstände anpassen. Verwenden Sie dazu geeignete XML-Attribute der jeweiligen UI-Elemente. Eine Liste der Gestaltungsmöglichkeiten für z.B. das `TextView` finden Sie [hier](https://developer.android.com/reference/android/widget/TextView).
+- Seien Sie kreativ: Verändern Sie die Geschichte durch weitere Verzweigungen oder ersetzen Sie sie komplett durch Ihr eigenes Abenteuer.
+
+## Texte für die einzelnen Szenen
+
+### Start
+
+*Freitag. 9 Uhr. Viel zu früh. Das letzte Bier beim Zoom-Stammtisch hätte es gestern Abend eigentlich nicht mehr gebraucht. Während deine Kopf gemächlich seinen Dienst aufnimmt und aus den zwei Schränken vor deinen Augen endlich wieder einer wird, beginnt es in deinem Gehirn zu brodeln. Freitag. 9 Uhr. War da nicht was? Irgendwas mit Robotern und Telefonen? Plötzlich fällt es dir ein! Der Live-Stream zum Android-Kurs beginnt doch jeden Augenblick! Keine Zeit für langes Nachdenken, jetzt muss eine Entscheidung her. Was möchtest du tun?*
+
+*Option A: Schnell den Laptop holen. Stift und Papier. Ich bereit und will etwas lernen.*
+
+*Option B: Das Video kann ich mir auch noch später anschauen. Noch 5 Minuten die Augen schließen ...*
+
+### Stream 
+
+*Grade noch rechtzeitig schaffst du es, den Stream aufzurufen. Während du der monotonen Stimme des Dozenten lauscht, werden deine Augen wieder schwerer. So ganz kannst du dich immer noch nicht konzentrieren. Und überhaupt. Wer braucht schon Android. Und hier auf Twitch gib es bestimmt auch noch was spannenderes zu schauen. Zusammenreißen und aufpassen oder lieber chillen? Was möchtest du tun?*
+
+*Option A: Ich reiß mich zusammen. Vielleicht ist das ja doch wichtig und hilft mir irgendwann mal.*
+
+*Option B: Also zu den Let\'s Plays von Gronkh kann ich immer ganz gut einschlafen. Schnell den Kanal wechseln.*
+
+### Happy Ending
+
+*Den Stream schaust du dir komplett an. Und das Übungsblatt. Und den Foliensatz gleich auch noch mal. Heute bist du motiviert. Das einzige was dich stört ist, dass du immer noch nicht diese eine App gefunden hast, die du schon ewig suchst. Aber hey, du kennst dich mit Android aus! Hast immer aufgepasst im Kurs. Du setzt dich an den Rechner und beginnst zu programmieren.*
+
+*6 Monate später. Schon 2 Millionen Menschen haben deine App gekauft. Du schwimmst in Geld. Gut das du dich damals doch aus dem Bett gequält hast. Und gut das du den Live-Stream nie verpasst hast.*
+
+### Bad Ending
+
+*Glücklich schließt du die Augen und bist wenige Sekunden später eingeschlafen. Aber irgendwas stimmt nicht. Du wachst in einem dunklen Raum auf. Das einzige Licht strahlt dir aus einer Deckenlampe, direkt über dir, in die Augen. Ist das ein Traum? Wenn ja, dann wahrscheinlich ein Apltraum. Denn du hörst plötzlich hinter dir langsame, mechanische Schritte und ein schrilles Kichern. Das riesige, grüne Gesicht des Android-Maskottchen schiebt sich in dein Blickfeld. Die großen, regungslosen Augen starren dich an. Der Roboter kichert ohne den Mund zu bewegen.*
+
+*Das nächste Mal, denkst du dir, bin ich pünktlich zum Live-Stream*
+
+## Screenshots der Anwendung
+
+| | | |
+|-|-|-|
+|![Screenshots der Adventure App-App](./docs/screenshot-1.png){ height=8cm }|![Screenshots der Adventure App-App](./docs/screenshot-2.png){ height=8cm }|![Screenshots der Adventure App-App](./docs/screenshot-3.png){ height=8cm }|
