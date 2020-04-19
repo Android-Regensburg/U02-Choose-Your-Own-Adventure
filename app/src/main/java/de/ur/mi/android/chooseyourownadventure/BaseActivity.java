@@ -1,4 +1,4 @@
-package de.ur.mi.android.walkthrough;
+package de.ur.mi.android.chooseyourownadventure;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -7,8 +7,6 @@ import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
-import de.ur.mi.android.exercises.walkthrough.R;
 
 public class BaseActivity extends Activity implements View.OnClickListener {
 

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <resources>
-    <string name="app_name">Die Android-Vorlesung</string>
+    <string name="app_name">Der Live-Stream</string>
     <string name="action_settings">Settings</string>
     <string name="start">
         Freitag. 9 Uhr. Viel zu früh. Das letzte Bier beim Zoom-Stammtisch hätte es gestern Abend eigentlich nicht mehr gebraucht.
@@ -38,12 +38,12 @@
         Das nächste Mal, denkst du dir, bin ich pünktlich zum Live-Stream ...
     </string>
 
-    <string name="heading">Die Android-Vorlesung</string>
+    <string name="heading">Der Live-Stream</string>
     <string name="description">Geschichten die das Leben schreibt</string>
     <string name="optionA">Option A</string>
     <string name="optionB">Option B</string>
-    <string name="label_start">start</string>
-    <string name="label_stream">stream</string>
-    <string name="label_godEnding">end</string>
-    <string name="label_badEnding">end</string>
+    <string name="label_start">CYOA: Android</string>
+    <string name="label_stream">Der Stream</string>
+    <string name="label_godEnding">Happy Ending</string>
+    <string name="label_badEnding">Not So Happy Ending</string>
 </resources>
