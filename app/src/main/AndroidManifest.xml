@@ -9,16 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="de.ur.mi.android.exercises.walkthrough.PageOne" android:label="@string/label_page_1">
+        <activity android:name="de.ur.mi.android.walkthrough.Start" android:label="@string/label_start">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PageTwo" android:label="@string/label_page_2">
+        <activity android:name="de.ur.mi.android.walkthrough.Stream" android:label="@string/label_badEnding">
         </activity>
-        <activity android:name=".PageThree" android:label="@string/label_page_3">
+        <activity android:name="de.ur.mi.android.walkthrough.GoodEnding" android:label="@string/label_godEnding">
+        </activity>
+        <activity android:name="de.ur.mi.android.walkthrough.BadEnding" android:label="@string/label_badEnding">
         </activity>
 
     </application>
