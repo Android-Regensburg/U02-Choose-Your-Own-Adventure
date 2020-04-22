@@ -1,5 +1,5 @@
 ---
-title: Einführung in die Entwicklungsumgebung Android Studio
+title: Choose Your Own Adventure
 author: Zuletzt bearbeitet von Alexander Bazo
 documentclass: scrartcl
 classoption:
