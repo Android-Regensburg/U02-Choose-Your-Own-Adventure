@@ -2,6 +2,7 @@
 <resources>
     <string name="app_name">Der Live-Stream</string>
     <string name="action_settings">Settings</string>
+    <!-- Texte für die einzelnen Kapitel der Geschichte -->
     <string name="start">
         Freitag. 9 Uhr. Viel zu früh. Das letzte Bier beim Zoom-Stammtisch hätte es gestern Abend eigentlich nicht mehr gebraucht.
         Während deine Kopf gemählich seinen Dienst aufnimmt und aus den zwei Schränken vor deinen Augen endlich wieder einer wird, beginnt es in deinem Gehirn zu brodeln.
@@ -21,7 +22,7 @@
         \n\n
         Option B: Also zu den Let\'s Plays von Gronkh kann ich immer ganz gut einschlafen. Schnell den Kanal wechseln.
     </string>
-    <string name="godEnding">
+    <string name="goodEnding">
         Den Stream schaust du dir komplett an. Und das Übungsblatt. Und den Foliensatz gleich auch noch mal. Heute bist du motiviert.
         Das einzige was dich stört ist, dass du immer noch nicht diese eine App gefunden hast, die du schon ewig suchst.
         Aber hey, du kennst dich mit Android aus! Hast immer aufgepasst im Kurs. Du setzt dich an den Rechner und beginnst zu programmieren.
@@ -37,7 +38,7 @@
         \n\n
         Das nächste Mal, denkst du dir, bin ich pünktlich zum Live-Stream ...
     </string>
-
+    <!-- Weitere texte für die Beschriftung der Labels und Buttons im User Interface -->
     <string name="heading">Der Live-Stream</string>
     <string name="description">Geschichten die das Leben schreibt</string>
     <string name="optionA">Option A</string>

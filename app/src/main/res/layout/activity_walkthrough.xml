@@ -8,12 +8,17 @@
     android:orientation="vertical"
     android:padding="10dp">
 
+    <!-- Separater Layout-Container für Überschrift, Beschreibung und Kapiteltext. Der Container
+    nutzt (layout_weight) den gesamten Platz der im Elternelement zur Verfügung steht, nachdem
+     alle anderen Elemente (hier Container für Buttons) platziert wurden. -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:orientation="vertical">
 
+        <!-- Die Schriftgröße wird über die Einheit sp angegeben, die neben der relativen Displaygröße
+        auch die systemweit ausgewählte Schriftgröße berücksichtigt. -->
         <TextView
             android:id="@+id/heading"
             android:layout_width="match_parent"
@@ -31,6 +36,10 @@
             android:text="@string/description"
             android:textAlignment="center" />
 
+        <!-- Der TextView für den Kapiteltext ist in einen ScrollView eingebettet, der den gesamten
+        verfügbaren Raum im umschließenden LinearLayout ausnutzt. Sollte der Text zu lang sein, um
+        komplett in dieser Fläche dargestellt zu werden, können NutzerInnen zu den übrigen Inhalten
+        herunter scrollen. -->
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -49,6 +58,8 @@
 
     </LinearLayout>
 
+    <!-- Separater Layout-Container für die Buttons. Wird im umschließenden LinearLayout unter dem
+     Container für Überschrift, Beschriftung und Kapiteltext angezeigt. -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -56,6 +67,8 @@
         android:elevation="10dp"
         android:orientation="horizontal">
 
+        <!-- Die Buttons werden über das layout_weight-Attribut so konfiguriert, dass bei den
+        verfügbaren Platz im Elternelement zu gleichen Teilen ausnutzten. -->
         <Button
             android:id="@+id/buttonOptionA"
             android:layout_width="0dp"
