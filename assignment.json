@@ -1,0 +1,4 @@
+{
+  "title": "Choose Your Own Adventure",
+  "abstract": "In dieser Aufgabe machen Sie sich mit den wichtigsten Konzepten von Activities und Intents vertraut. Sie planen und implementieren ein einfaches Layout für das User Interface Ihrer Anwendung, entwickeln mehrere Activities die dieses Layout verwenden und Nutzen Events und Intents um NutzerInnen den Wechsel zwischen diesen Activities zu erlauben. Screenshots zu einer möglichen Lösung finden Sie am Ende dieser Anleitung. Vergessen Sie nicht, den Code möglichst häufig und regelmäßig auf Ihrem Smartphone oder einem Virtual Device zu testen um so möglichst früh Fehler zu finden und beheben zu können."
+}

@@ -1,30 +1,4 @@
----
-title: Choose Your Own Adventure
-author: Zuletzt bearbeitet von Alexander Bazo
-documentclass: scrartcl
-classoption:
-  - a4paper
-header-includes: |
-    \usepackage{german} 
-    \usepackage[a4paper,left=2.5cm, right=2.5cm,top=2.5cm, bottom=3cm]{geometry}
-    \usepackage{fancyhdr}
-    \pagestyle{fancy}
-    \fancyhf{}
-    \rhead{Mobile Apps für Android}
-    \lhead{Übungsaufgaben}
-    \cfoot{\includegraphics[height=2cm]{docs/footer.png}}
-    \fancypagestyle{plain}{
-      \fancyhf{}
-      \rhead{Mobile Apps für Android}
-      \lhead{Übungsaufgaben}
-      \cfoot[C]{\includegraphics[height=2cm]{docs/footer.png}}}
----
-
 # 02 | Choose Your Own Adventure: Der Live-Stream
-
-![](./docs/cover.png)
-
-In dieser Aufgabe machen Sie sich mit den wichtigsten Konzepten von *Activities* und *Intents* vertraut. Sie planen und implementieren ein einfaches Layout für das *User Interface* Ihrer Anwendung, entwickeln mehrere *Activities* die dieses Layout verwenden und Nutzen *Events* und *Intents* um NutzerInnen den Wechsel zwischen diesen *Activities* zu erlauben. Screenshots zu einer möglichen Lösung finden Sie am Ende dieser Anleitung. **Vergessen Sie nicht, den Code möglichst häufig und regelmäßig auf Ihrem Smartphone oder einem *Virtual Device* zu testen um so möglichst früh Fehler zu finden und beheben zu können.**
 
 ## Aufgabenstellung
 
