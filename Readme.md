@@ -60,15 +60,15 @@ Sobald die grundlegende Funktionalität der Anwendung implementiert ist, können
 
 ### Start
 
-*Freitag. 9 Uhr. Viel zu früh. Das letzte Bier beim Zoom-Stammtisch hätte es gestern Abend eigentlich nicht mehr gebraucht. Während deine Kopf gemächlich seinen Dienst aufnimmt und aus den zwei Schränken vor deinen Augen endlich wieder einer wird, beginnt es in deinem Gehirn zu brodeln. Freitag. 9 Uhr. War da nicht was? Irgendwas mit Robotern und Telefonen? Plötzlich fällt es dir ein! Der Live-Stream zum Android-Kurs beginnt doch jeden Augenblick! Keine Zeit für langes Nachdenken, jetzt muss eine Entscheidung her. Was möchtest du tun?*
+*Freitag. 9 Uhr. Viel zu früh. Das letzte Bier beim Zoom-Stammtisch hätte es gestern Abend eigentlich nicht mehr gebraucht. Während dein Kopf gemächlich seinen Dienst aufnimmt und aus den zwei Schränken vor deinen Augen endlich wieder einer wird, beginnt es in deinem Gehirn zu brodeln. Freitag. 9 Uhr. War da nicht was? Irgendwas mit Robotern und Telefonen? Plötzlich fällt es dir ein! Der Live-Stream zum Android-Kurs beginnt doch jeden Augenblick! Keine Zeit für langes Nachdenken, jetzt muss eine Entscheidung her. Was möchtest du tun?*
 
-*Option A: Schnell den Laptop holen. Stift und Papier. Ich bereit und will etwas lernen.*
+*Option A: Schnell den Laptop holen. Stift und Papier. Ich bin bereit und will etwas lernen.*
 
 *Option B: Das Video kann ich mir auch noch später anschauen. Noch 5 Minuten die Augen schließen ...*
 
 ### Stream 
 
-*Grade noch rechtzeitig schaffst du es, den Stream aufzurufen. Während du der monotonen Stimme des Dozenten lauscht, werden deine Augen wieder schwerer. So ganz kannst du dich immer noch nicht konzentrieren. Und überhaupt. Wer braucht schon Android. Und hier auf Twitch gib es bestimmt auch noch was spannenderes zu schauen. Zusammenreißen und aufpassen oder lieber chillen? Was möchtest du tun?*
+*Grade noch rechtzeitig schaffst du es, den Stream aufzurufen. Während du der monotonen Stimme des Dozenten lauscht, werden deine Augen wieder schwerer. So ganz kannst du dich immer noch nicht konzentrieren. Und überhaupt. Wer braucht schon Android. Und hier auf Twitch gibt es bestimmt auch noch was spannenderes zu schauen. Zusammenreißen und aufpassen oder lieber chillen? Was möchtest du tun?*
 
 *Option A: Ich reiß mich zusammen. Vielleicht ist das ja doch wichtig und hilft mir irgendwann mal.*
 
@@ -82,7 +82,7 @@ Sobald die grundlegende Funktionalität der Anwendung implementiert ist, können
 
 ### Bad Ending
 
-*Glücklich schließt du die Augen und bist wenige Sekunden später eingeschlafen. Aber irgendwas stimmt nicht. Du wachst in einem dunklen Raum auf. Das einzige Licht strahlt dir aus einer Deckenlampe, direkt über dir, in die Augen. Ist das ein Traum? Wenn ja, dann wahrscheinlich ein Apltraum. Denn du hörst plötzlich hinter dir langsame, mechanische Schritte und ein schrilles Kichern. Das riesige, grüne Gesicht des Android-Maskottchen schiebt sich in dein Blickfeld. Die großen, regungslosen Augen starren dich an. Der Roboter kichert ohne den Mund zu bewegen.*
+*Glücklich schließt du die Augen und bist wenige Sekunden später eingeschlafen. Aber irgendwas stimmt nicht. Du wachst in einem dunklen Raum auf. Das einzige Licht strahlt dir aus einer Deckenlampe, direkt über dir, in die Augen. Ist das ein Traum? Wenn ja, dann wahrscheinlich ein Alptraum. Denn du hörst plötzlich hinter dir langsame, mechanische Schritte und ein schrilles Kichern. Das riesige, grüne Gesicht des Android-Maskottchen schiebt sich in dein Blickfeld. Die großen, regungslosen Augen starren dich an. Der Roboter kichert ohne den Mund zu bewegen.*
 
 *Das nächste Mal, denkst du dir, bin ich pünktlich zum Live-Stream*
 
