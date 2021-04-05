@@ -9,8 +9,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 /**
- * Die BaseActivity dient als Vorlage (Superklasse) für alle Acitivties der Anwendung. Hier werden
- * die gemeinsamen Eigenschaften modelliert, die in den übrigen Activites zur Darstellung des
+ * Die BaseActivity dient als Vorlage (Superklasse) für alle Activities der Anwendung. Hier werden
+ * die gemeinsamen Eigenschaften modelliert, die in den übrigen Activities zur Darstellung des
  * Kapiteltexts und zum Abfangen der NutzerInnen-Interaktion notwendig sind.
  */
 public class BaseActivity extends Activity implements View.OnClickListener {
@@ -31,7 +31,7 @@ public class BaseActivity extends Activity implements View.OnClickListener {
     /**
      * In dieser Methode werden die Referenzen auf die notwendigen UI-Elemente erstellt und in
      * den entsprechenden Instanzvariablen abgespeichert. Der Klick auf die Buttons wird über das
-     * Setzten entsprechender Listener realisiert. Die Activity selbst implementiert dazu das
+     * Setzen entsprechender Listener realisiert. Die Activity selbst implementiert dazu das
      * notwendige Interface (View.OnClickListener) und kann daher als Ziel für die Events verwendet
      * werden. Als Callback-Methode dient dabei die, durch das Implementieren des Interface vorgegebene,
      * Methode onCLick.
@@ -47,27 +47,23 @@ public class BaseActivity extends Activity implements View.OnClickListener {
 
     /**
      * Anhand der ID des Views, das als Parameter an die Methode übergeben wird, kann festgestellt
-     * werden, welche Button genau angeklickt wurde. Beide Buttons teilen sich dieselbe Callback-
+     * werden, welcher Button genau angeklickt wurde. Beide Buttons teilen sich dieselbe Callback-
      * Methode, um diese Klasse über die Klick-Events zu informieren. Beim Aufruf wird aber jeweils
      * die konkrete Button-Instanz als Parameter (v) übergeben.
      */
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.buttonOptionA:
-                startIntent(targetForOptionA);
-                break;
-            case R.id.buttonOptionB:
-                startIntent(targetForOptionB);
-                break;
-            default:
-                break;
+        int id = v.getId();
+        if (id == R.id.buttonOptionA) {
+            startIntent(targetForOptionA);
+        } else if (id == R.id.buttonOptionB) {
+            startIntent(targetForOptionB);
         }
     }
 
     /**
-     * In dieser Methode wird ein Intent erstellt und gestarter, der, ausgehend von der aktuellen
-     * Activity, die als target-Parameter übergebene Activity aufruf.
+     * In dieser Methode wird ein Intent erstellt und gestartet, der, ausgehend von der aktuellen
+     * Activity, die als target-Parameter übergebene Activity aufruft.
      */
     private void startIntent(Class target) {
         /**
