@@ -88,6 +88,4 @@ Sobald die grundlegende Funktionalität der Anwendung implementiert ist, können
 
 ## Screenshots der Anwendung
 
-| | | |
-|-|-|-|
-|![Screenshots der Adventure App-App](./docs/screenshot-1.png){ height=8cm }|![Screenshots der Adventure App-App](./docs/screenshot-2.png){ height=8cm }|![Screenshots der Adventure App-App](./docs/screenshot-3.png){ height=8cm }|
+|![Screenshots der Adventure App](./docs/screeshots-u02-choose-your-own-adventure.png)
