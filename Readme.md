@@ -88,4 +88,4 @@ Sobald die grundlegende Funktionalität der Anwendung implementiert ist, können
 
 ## Screenshots der Anwendung
 
-|![Screenshots der Adventure App](./docs/screeshots-u02-choose-your-own-adventure.png)
+![Screenshots der Adventure App](./docs/screeshots-u02-choose-your-own-adventure.png)
