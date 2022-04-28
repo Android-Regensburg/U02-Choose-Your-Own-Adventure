@@ -14,23 +14,29 @@ Der Spielablauf kann anhand dieser Grafik nachvollzogen werden. Die entsprechend
 
 ## Vorgehen
 
-### Ein neues Projekt
+### Schritt 1: Ein neues Projekt
 
-Erstellen Sie in *Android Studio* ein neues Projekt. Wählen Sie als *Project Template* die Option *Empty Activity* und vergeben Sie sinnvolle Werte für den Namen und Paketnamen der Anwendung. 
+Erstellen Sie in *Android Studio* ein neues Projekt. Wählen Sie als *Project Template* die Option *Empty Activity* und vergeben Sie sinnvolle Werte für den Namen und Paketnamen der Anwendung. Starten Sie die neue Anwendung im Emulator, sobald _Android Studio_ die Initialisierung abgeschlossen hat.
 
-### Ressourcen
+**Zwischenziel:** Sie haben ein neues Android-Projekt auf Basis der von _Android Studio_ vorgegebenen Vorlage erstellt. Das Projekt wurde erfolgreich geladen und Sie können die neue Anwendung im Emulator ausführen. Dort wird eine fast leere Activity mit dem Text "Hello World" angezeigt.
+
+### Schritt 2: Ressourcen vorbereiten
 
 Für die Anwendung benötigen wir eine Reihe von Texten (*Strings*), die wir an verschiedenen Stellen des *User Interface* verwenden werden. Dazu gehören die einzelnen *Kapitel*, die Beschriftungen für die Buttons zur Auswahl der möglichen Optionen und eine Überschrift, die in jeder *Activity* über dem aktuellen Text angezeigt wird. Grundsätzlich ist es eine gute Idee, Code und Inhalt (hier die Texte) in einer Anwendung bestmöglich zu trennen. In Android nutzen wir dazu Ressourcendateien, in denen wir in diesem Fall Textbausteine speichern um diese im Anschluss im Code unserer Anwendung referenzieren zu können. Inhaltliche Änderungen müssen dann nur noch in dieser XML-Datei vorgenommen werden - die Referenz im Code bleiben unberührt.
 
-**Erstellen Sie in der Datei `res\values\strings.xml` Einträge für alle Texte. Verwenden Sie geeignete Bezeichner (Attribut `name`) mit denen die Texte später im Code referenziert werden können. Als Vorlage können Sie das XML-Element mit dem Namen `app_name` verwenden, das automatisch in der Datei angelegt wird.**
+**Erstellen Sie in der Datei `res\values\strings.xml` Einträge für alle Texte. Verwenden Sie geeignete Bezeichner (Attribut `name`) mit denen die Texte später im Code referenziert werden können. Als Vorlage können Sie das XML-Element mit dem Namen `app_name` verwenden, das automatisch in der Datei angelegt wird.** Die Texte für die Kapitel finden Sie ganz unten in der Aufgabenbeschreibung. Schauen Sie sich die Screenshots an, um auch die übrigen Texte für Überschriften und Beschriftungen der Schaltflächen zu identifizieren. Falls Sie beim Editieren der XML-Datei syntaktische Fehler verursachen, können Sie die Anwendung wahrscheinlich nicht mehr starten, bevor diese behoben werden.
 
-### Layout
+**Zwischenziel:** Alle für die Anwendung benötigten Texte sind als XML-Elemente in der entsprechenden Ressourcendatei gespeichert. Die Anwendung lässt sich weiterhin fehlerfrei im Emulator ausführen.
 
-In Ihrem Projekt finden Sie bereits eine automatisch erstellte Layout-Datei, die auch bereits in der ersten *Activity* (Methode `setContentView` in der `MainActivity`) verwendet wird. Sie können dieses Layout über die XML-Ansicht oder den graphischen Editor anpassen und die UI-Elemente ergänzen, die Sie zum Umsetzen der Anwendung benötigen: Ein `TextView` für die Überschrift, ein weiteres `TextView` für den Kapiteltext und die beiden `Buttons` zur Auswahl der möglichen Optionen.
+### Schritt 3: Ein UI (für die erste Activity)
+
+In Ihrem Projekt finden Sie bereits eine automatisch erstellte Layout-Datei, die auch bereits in der ersten *Activity* (Methode `setContentView` in der `MainActivity`) verwendet wird. Sie können dieses Layout über die XML-Ansicht oder den graphischen Editor anpassen und die UI-Elemente ergänzen, die Sie zum Umsetzen der Anwendung benötigen: Ein `TextView` für die Überschrift, ein weiteres `TextView` für den Kapiteltext und die beiden `Buttons` zur Auswahl der möglichen Optionen. Nutzen Sie für den Inhalt bzw. die Beschriftung der Elemente die vorbereiteten Ressourcen aus der XML-Datei. Das `TextView` für den Kapiteltext lassen Sie vorerst leer.
 
 **Editieren Sie die Layout-Datei `res\layout\activity_main.xml`. Fügen Sie die notwendigen UI-Elemente hinzu und vergeben Sie passende *IDs*, mit denen die Elemente später im Code referenziert und manipuliert werden können.**
 
-### Die erste  Activity
+**Zwischenziel:** Beim Starten der Anwendung wird jetzt das angepasste _User Interface_ angezeigt. Zu sehen sind die beiden Überschriften und die beiden Buttons.
+
+### Schritt 4: Das erste Kapitel
 
 Jede mögliche Szene des Spiels wird durch eine *Activity* repräsentiert. Diese sind dabei sehr ähnlich aufgebaut. Alle *Activities* nutzen das gleiche Layout (`activity_main.xml`) und haben die gleiche Aufgabe:
 
@@ -42,11 +48,15 @@ Wir implementieren die vier Szenen des Spiels (`Start`, `Stream`, `Happy Ending`
 
 **Passen Sie die vorhandenen *Activity* an, um hier die erste Szene des Spiels darzustellen. Referenzieren Sie die verschiedenen Elemente des *User Interface* in entsprechenden Variablen. Setzten Sie den korrekten Text aus der Ressourcen-Datei ein. Fangen Sie die Klicks auf die Buttons ab, in dem Sie auf diesen `OnClickListener` registrieren. Nutzen Sie später die *Callback*-Methoden der *Listener*, um über *Intents* zur jeweils ausgewählten, nächsten Szene zu wechseln.**
 
+**Zwischenziel:** Beim Starten der Anwendung wird jetzt auch der Kapiteltext für das erste Kapitel angezeigt.
+
 ### Die anderen Activities
 
 Verwenden Sie angepasste *Actvitity* als Vorlage für die anderen Szenen, die Sie ebenfalls als einzelne *Activity* abbilden. Neue *Activities*  erstellen Sie, in dem Sie zusätzliche Java-Klassen erzeugen, die von der Superklasse `Activity` erben. Denken Sie daran, diese neuen *Activities* im *Manifest* der Anwendung einzutragen. Vergessen Sie dies, wird Ihre Anwendung abstürzen, sobald Sie versuchen zu diesen *Activities* zu wechseln.
 
 **Wenn alle Szenen erstellt wurden, können Sie die *Callback*-Methoden der *Listener*, die Sie auf den Buttons registriert haben, verwenden, um über *Intents* zur jeweils passenden nächsten *Activity* zu wechseln. Wählen die SpielerInnen in der ersten Szene z.B. die *Option A* aus, wechseln Sie per *Intent* zur Szene `Stream`.**
+
+**Zwischenziel:** Beim Starten der Anwendung wird das erste Kapitel angezeigt. Über die beiden Buttons können Sie zu den _Activities_ mit den übrigen Kapiteln wechseln. Die Navigation folgt dabei der Abfolge, die in der Grafik zum Spielablauf skizziert wurde.
 
 ## Erweiterungen
 
