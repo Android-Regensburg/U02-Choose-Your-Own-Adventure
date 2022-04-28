@@ -50,7 +50,7 @@ Wir implementieren die vier Szenen des Spiels (`Start`, `Stream`, `Happy Ending`
 
 **Zwischenziel:** Beim Starten der Anwendung wird jetzt auch der Kapiteltext für das erste Kapitel angezeigt.
 
-### Die anderen Activities
+### Schritt 5: Die anderen Activities
 
 Verwenden Sie angepasste *Actvitity* als Vorlage für die anderen Szenen, die Sie ebenfalls als einzelne *Activity* abbilden. Neue *Activities*  erstellen Sie, in dem Sie zusätzliche Java-Klassen erzeugen, die von der Superklasse `Activity` erben. Denken Sie daran, diese neuen *Activities* im *Manifest* der Anwendung einzutragen. Vergessen Sie dies, wird Ihre Anwendung abstürzen, sobald Sie versuchen zu diesen *Activities* zu wechseln.
 
