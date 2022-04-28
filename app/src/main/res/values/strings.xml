@@ -11,7 +11,7 @@
         \n\n
         Option A: Schnell den Laptop holen. Stift und Papier. Ich bin bereit und will etwas lernen.
         \n\n
-        Option B: Das Video kann ich mir auch noch später anschauen. Noch 5 Minuten die Augen schließen ...
+        Option B: Das Video kann ich mir auch noch später anschauen. Noch 5 Minuten die Augen schließen …
     </string>
     <string name="stream">
         Grade noch rechtzeitig schaffst du es, den Stream aufzurufen. Während du der monotonen Stimme des Dozenten lauscht, werden deine Augen wieder schwerer.
@@ -36,7 +36,7 @@
         Denn du hörst plötzlich hinter dir langsame, mechanische Schritte und ein schrilles Kichern. Das riesige, grüne Gesicht des Android-Maskottchen schiebt sich in dein Blickfeld.
         Die großen, regungslosen Augen starren dich an. Der Roboter kichert ohne den Mund zu bewegen.
         \n\n
-        Das nächste Mal, denkst du dir, bin ich pünktlich zum Live-Stream ...
+        Das nächste Mal, denkst du dir, bin ich pünktlich zum Live-Stream …
     </string>
     <!-- Weitere texte für die Beschriftung der Labels und Buttons im User Interface -->
     <string name="heading">Der Live-Stream</string>

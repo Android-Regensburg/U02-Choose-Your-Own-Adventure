@@ -8,8 +8,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name="de.ur.mi.android.chooseyourownadventure.scenes.Start" android:label="@string/label_start">
+        android:theme="@style/Theme.U02">
+        <activity android:name="de.ur.mi.android.chooseyourownadventure.scenes.Start" android:label="@string/label_start"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
